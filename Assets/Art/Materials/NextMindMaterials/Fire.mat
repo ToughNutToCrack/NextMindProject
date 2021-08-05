@@ -54,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -83,7 +83,7 @@ Material:
     - _BumpScale: 1
     - _ConstantSize: 1
     - _Cutoff: 0.58
-    - _Density: 29.97
+    - _Density: 15.69
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
@@ -108,7 +108,7 @@ Material:
     - _UseMainTexAlpha: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.22987673, b: 0.15566039, a: 1}
+    - _Color: {r: 1, g: 0.08837209, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
