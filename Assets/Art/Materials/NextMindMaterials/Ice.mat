@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ice
-  m_Shader: {fileID: -6465566751694194690, guid: 49fd64a31fbefea4a8d589e82ad62149,
+  m_Shader: {fileID: -6465566751694194690, guid: c4225ff559174ed469c2d74521cd7b71,
     type: 3}
   m_ShaderKeywords: CONSTANT_SIZE ETC1_EXTERNAL_ALPHA MAIN_ALPHA PROJECTION_TYPE_TRIPLANAR
     RENDERING_MODE_OPAQUE TRIPLANAR _ALPHATEST_ON _OVERLAYBLENDING_ON
