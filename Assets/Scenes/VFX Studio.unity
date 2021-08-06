@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 172720367}
   - component: {fileID: 172720366}
   - component: {fileID: 172720365}
+  - component: {fileID: 172720368}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -222,13 +223,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172720364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.126, y: 1.31, z: 0}
+  m_LocalPosition: {x: 0.157, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448152676}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &172720368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172720364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7144007ae15fb4a9b35e2cc74fc7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireEffect: {fileID: 172720366}
 --- !u!1 &448152675
 GameObject:
   m_ObjectHideFlags: 0
