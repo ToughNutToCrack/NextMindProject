@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class SpellManager : MonoBehaviour
     bool experienceStarted;
     public List<GameObject> spells;
     public Transform spellParent;
+    GameObject spawnedObject;
+    int n;
 
     public void ActivateSpells() {
         experienceStarted = true;
@@ -37,6 +40,22 @@ public class SpellManager : MonoBehaviour
 
     public void ActivateSpell(int spellIndex) {
         HandleRunes(false);
-        var spell = Instantiate(spells[spellIndex], spellParent);
+        spawnedObject = Instantiate(spells[spellIndex], spellParent);
+    }
+
+    public void ThrowSpell(Vector3 direction) {
+        print("CAST!!!");
+        spawnedObject.transform.parent = null;
+        StartCoroutine(MoveSpellToDirection(direction));
+        
+    }
+
+    IEnumerator MoveSpellToDirection(Vector3 direction) {
+        n++;
+        while (n < 100)
+        {
+            spawnedObject.transform.position = spawnedObject.transform.position + direction.normalized * Time.deltaTime;
+            yield return null;
+        }
     }
 }
