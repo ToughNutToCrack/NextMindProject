@@ -9,7 +9,7 @@ using System.Collections.Generic;
 public class SimpleCalibrationExample : MonoBehaviour{
     public CalibrationManager calibrationManager;
     public Text resultsText;
-    public List<GameObject> extraTags;
+    public GameManager manager;
     
     void Start(){
         StartCoroutine(startCalibrationWhenReady());
@@ -19,11 +19,17 @@ public class SimpleCalibrationExample : MonoBehaviour{
         yield return new WaitUntil(NeuroManager.Instance.IsReady);
         calibrationManager.onCalibrationResultsAvailable.AddListener(onReceivedResults);
         calibrationManager.StartCalibration();
+        resultsText.gameObject.SetActive(false);
     }
 
     private void onReceivedResults(Device device, CalibrationResults.CalibrationGrade grade){
-        resultsText.text = $"Received results for {device.Name} with a grade of {grade}";
-        foreach (var t in extraTags)
-            t.SetActive(true);
+        resultsText.gameObject.SetActive(true);
+        resultsText.text = $"Configuration complete! Received results for {device.Name} with a grade of {grade}";
+        manager.StartExperience();
+    }
+
+    private IEnumerator closeText(){
+        yield return new WaitForSeconds(3);
+        resultsText.gameObject.SetActive(false);
     }
 }

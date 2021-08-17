@@ -87,6 +87,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 7278ae0bf024ff6489312bffba3dd4e6, type: 2}
   defaultColor: {r: 0, g: 1, b: 0.7411765, a: 0.101960786}
   stimulatedColor: {r: 0, g: 1, b: 0.7411765, a: 1}
+  autoHideFeedback: 0
 --- !u!114 &7922636988113170476
 MonoBehaviour:
   m_ObjectHideFlags: 0

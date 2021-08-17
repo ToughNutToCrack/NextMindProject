@@ -100,7 +100,7 @@ Material:
     m_Colors:
     - Color_116725BF: {r: 1, g: 1, b: 1, a: 0}
     - Color_6512CD7A: {r: 1, g: 1, b: 1, a: 0}
-    - Color_85BA657: {r: 1, g: 1, b: 1, a: 0}
+    - Color_85BA657: {r: 0.63529414, g: 0.35686275, b: 0.15686275, a: 0}
     - Color_F25F2FC1: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
