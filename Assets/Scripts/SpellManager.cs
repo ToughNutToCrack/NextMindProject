@@ -44,18 +44,11 @@ public class SpellManager : MonoBehaviour
     }
 
     public void ThrowSpell(Vector3 direction) {
-        print("CAST!!!");
-        spawnedObject.transform.parent = null;
-        StartCoroutine(MoveSpellToDirection(direction));
-        
-    }
-
-    IEnumerator MoveSpellToDirection(Vector3 direction) {
-        n++;
-        while (n < 100)
+        if (spawnedObject != null)
         {
-            spawnedObject.transform.position = spawnedObject.transform.position + direction.normalized * Time.deltaTime;
-            yield return null;
+            spawnedObject.transform.parent = null;
+            spawnedObject.GetComponent<Spell>().ThrowSpell(direction);
+            spawnedObject = null;
         }
     }
 }

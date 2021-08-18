@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class HandManager : MonoBehaviour
@@ -9,24 +8,38 @@ public class HandManager : MonoBehaviour
     Vector3 oldTransform;
     int counter;
     public SpellManager spellManager;
+    public OVRHand hand;
+    // List<Vector3> positions;
+
+
 
     void Start()
     {
+        // positions = new List<Vector3>();
         oldTransform = transform.position;
     }
 
     void Update()
     {
-        print(counter);
-        if (counter >= numberOfStep)
-            spellManager.ThrowSpell(transform.position - oldTransform);
+        if (!hand.IsTracked)
+        {
+            counter = 0;
+            return;
+        }
 
         var distance = Vector3.Distance(transform.position, oldTransform);
-        oldTransform = transform.position;
 
         if (distance > distanceThreshold)
+        {
             counter++;
-        else 
+            if (counter >= numberOfStep)
+                spellManager.ThrowSpell(transform.position - oldTransform);
+        }
+        else
+        {
             counter = 0;
+        } 
+
+        oldTransform = transform.position;
     }
 }
