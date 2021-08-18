@@ -20,7 +20,7 @@ public class SpellManager : MonoBehaviour
     void Update()
     {        
         if (experienceStarted) {
-            if (!runesActive && OVRHand.IsSystemGestureInProgress)
+            if (!runesActive && OVRHand.IsSystemGestureInProgress && spawnedObject == null)
             {
                 runesActive = true;
                 HandleRunes(runesActive);
