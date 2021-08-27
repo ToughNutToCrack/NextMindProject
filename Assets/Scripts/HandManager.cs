@@ -79,9 +79,14 @@ public class HandManager : MonoBehaviour{
         if(other.tag == "SpellBoxController" && currentSpell != null){
             currentSpell.transform.SetParent(null);
             Rigidbody rb = currentSpell.AddComponent<Rigidbody>();
-            print(currentVelocity);
-            rb.AddForce(currentVelocity * 500);
-            currentSpell = null;
+            if (Vector3.Dot(head.forward, currentVelocity) < 0){
+                print("back");
+            }else{
+                print(currentVelocity);
+                currentSpell = null;
+                rb.AddForce(currentVelocity * 500);
+
+            }
         }
     }
 

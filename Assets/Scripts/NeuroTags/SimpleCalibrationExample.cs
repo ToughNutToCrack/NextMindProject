@@ -25,7 +25,7 @@ public class SimpleCalibrationExample : MonoBehaviour{
     private void onReceivedResults(Device device, CalibrationResults.CalibrationGrade grade){
         resultsText.gameObject.SetActive(true);
         resultsText.text = $"Configuration complete! Received results for {device.Name} with a grade of {grade}";
-        manager.StartExperience();
+        // manager.StartExperience();
         StartCoroutine(closeText());
     }
 
