@@ -1274,9 +1274,9 @@ MonoBehaviour:
   head: {fileID: 358702057}
   hand: {fileID: 114417842252128231}
   spellSpwanPoint: {fileID: 1323259241}
+  gameManager: {fileID: 1525425504}
   spellPrefab: {fileID: 3149943273176624369, guid: eacead9156f81fe43976bf13fea2c9fe,
     type: 3}
-  buttonListener: {fileID: 1594881003}
 --- !u!54 &654211505
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4413,6 +4413,50 @@ Transform:
   m_Father: {fileID: 1413348479}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1525425503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525425505}
+  - component: {fileID: 1525425504}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1525425504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525425503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fed0175a4de3814da0cf80de0913b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameStarted: 0
+--- !u!4 &1525425505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525425503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527909479
 GameObject:
   m_ObjectHideFlags: 0
@@ -4787,7 +4831,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1d1e44072146e4d857700d144e9c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGameStarted: 0
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1525425504}
+        m_MethodName: startGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoTurnOff: 1
 --- !u!65 &1594881004
 BoxCollider:
   m_ObjectHideFlags: 0

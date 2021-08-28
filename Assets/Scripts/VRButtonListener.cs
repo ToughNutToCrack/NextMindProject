@@ -5,13 +5,14 @@ using UnityEngine.Events;
 
 public class VRButtonListener : MonoBehaviour{
 
-    public bool isGameStarted = false;
+    public UnityEvent onTrigger;
+    public bool autoTurnOff = false;
 
     void OnTriggerEnter(Collider other) {
         OVRHand hand = other.GetComponent<OVRHand>();
-        if(hand != null){
-            isGameStarted = true;
-            gameObject.SetActive(false);
+        if(hand != null && onTrigger != null){
+            onTrigger.Invoke();
+            gameObject.SetActive(!autoTurnOff);
         }
     }
 }

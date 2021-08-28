@@ -35,11 +35,11 @@ public class HandManager : MonoBehaviour{
     public Transform head;
     public OVRHand hand;
     public Transform spellSpwanPoint;
+    public GameManager gameManager;
     [Header("Debug")]
     public GameObject spellPrefab;
-    public VRButtonListener buttonListener;
 
-    GameObject currentSpell = null;
+    GameObject currentSpell = null; //observable patterns??
     Vector3 previousPosition;
     Vector3 currentVelocity;
 
@@ -50,7 +50,7 @@ public class HandManager : MonoBehaviour{
     bool openHand() => hand.IsSystemGestureInProgress;
 
     void Update(){
-        if(buttonListener.isGameStarted){
+        if(gameManager.isGameStarted){
             if(openHand() && currentSpell == null){
                 currentSpell = Instantiate(spellPrefab, spellSpwanPoint);
             }
