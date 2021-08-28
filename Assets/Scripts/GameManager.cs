@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GamePhase {NONE, TRAINING, STARTED}
+public enum TrainingPhase {NONE, COMPLETE}
 
 public class GameManager : MonoBehaviour{
     // public SpellManager spellManager;
@@ -17,10 +18,28 @@ public class GameManager : MonoBehaviour{
     //     }
     // }
 
-    public bool isGameStarted = false;
+    public bool useNextMind = false;
+    public GameObject neuroManager;
+    public GameObject nextMindStatus;
+    public GameObject calibrationCanvas;
+
+    [HideInInspector]
+    public GamePhase gamePhase = GamePhase.NONE;
+    public TrainingPhase trainingPhase = TrainingPhase.NONE;
+
+    void Start() {
+        neuroManager.SetActive(useNextMind); 
+        nextMindStatus.SetActive(useNextMind); 
+        calibrationCanvas.SetActive(useNextMind); 
+    }
 
     public void startGame(){
-        isGameStarted = true;
+        if(!useNextMind){
+            gamePhase = GamePhase.STARTED;
+        }else{
+            gamePhase = GamePhase.TRAINING;
+            //startTraining;
+        }
     }
 
 }

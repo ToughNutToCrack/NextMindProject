@@ -50,7 +50,7 @@ public class HandManager : MonoBehaviour{
     bool openHand() => hand.IsSystemGestureInProgress;
 
     void Update(){
-        if(gameManager.isGameStarted){
+        if(gameManager.gamePhase == GamePhase.STARTED){
             if(openHand() && currentSpell == null){
                 currentSpell = Instantiate(spellPrefab, spellSpwanPoint);
             }
