@@ -198,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 48310738}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -0.1265, y: 0, z: -0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 1792938644}
   m_Father: {fileID: 1351075500}
@@ -232,6 +232,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: FIRE
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 654211504}
+        m_MethodName: setActiveSpell
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3149943273176624369, guid: eacead9156f81fe43976bf13fea2c9fe,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onMaintained:
@@ -1288,8 +1300,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509642909}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.0689, y: -0, z: 0.1387}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -0.0405, y: -0, z: 0.16}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 1873542991}
   m_Father: {fileID: 1351075500}
@@ -1323,6 +1335,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ICE
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 654211504}
+        m_MethodName: setActiveSpell
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3149943273176624369, guid: d98f7fa97eb95254db873903e83208c9,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onMaintained:
@@ -1400,8 +1424,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519696785}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.0689, y: -0, z: -0.1387}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -0.0405, y: -0, z: -0.16}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 1507495374}
   m_Father: {fileID: 1351075500}
@@ -1435,6 +1459,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: THUNDER
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 654211504}
+        m_MethodName: setActiveSpell
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3149943273176624369, guid: 41ab586a481c7f548ba5b867099193f2,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onMaintained:
@@ -1714,8 +1750,7 @@ MonoBehaviour:
   gameManager: {fileID: 1525425504}
   tags:
   - {fileID: 1351075499}
-  spellPrefab: {fileID: 3149943273176624369, guid: eacead9156f81fe43976bf13fea2c9fe,
-    type: 3}
+  spellPrefabDebug: {fileID: 0}
 --- !u!54 &654211505
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4942,7 +4977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1351075500
 Transform:
   m_ObjectHideFlags: 0
@@ -4952,7 +4987,7 @@ Transform:
   m_GameObject: {fileID: 1351075499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 48310739}
   - {fileID: 509642910}
@@ -4967,7 +5002,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351075499}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 1bfaeeea0461bd044911055ad736efd4, type: 2}
   m_Animations:
@@ -5909,7 +5944,7 @@ Transform:
   - {fileID: 747178299}
   m_Father: {fileID: 863221866}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -183.278, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -183.2, y: 0, z: 0}
 --- !u!4 &1594308570
 Transform:
   m_ObjectHideFlags: 0

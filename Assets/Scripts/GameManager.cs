@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour{
     public void onCalibrationEnd(){
         gamePhase = GamePhase.STARTED;
         trainingPhase = TrainingPhase.COMPLETE;
-        // calibrationCanvas.SetActive(false);
+        calibrationCanvas.SetActive(false);
     }
 
 }
