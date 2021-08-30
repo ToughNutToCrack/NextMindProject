@@ -58,8 +58,9 @@ public class HandManager : MonoBehaviour{
             if (Vector3.Dot(head.forward, currentVelocity) < 0){
                 print("back");
             }else{
-                rb.AddForce(currentVelocity * 500);
-                print(currentVelocity);
+                // rb.AddForce(currentVelocity * 500);
+                rb.velocity += currentVelocity  * 10;
+                // print(currentVelocity);
                 currentSpell = null;
             }
         }
