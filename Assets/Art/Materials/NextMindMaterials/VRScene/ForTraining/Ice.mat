@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Thunder
+  m_Name: Ice
   m_Shader: {fileID: -6465566751694194690, guid: c4225ff559174ed469c2d74521cd7b71,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA MAIN_ALPHA PROJECTION_TYPE_TRIPLANAR RENDERING_MODE_OPAQUE
@@ -70,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Stimulation:
-        m_Texture: {fileID: 2800000, guid: 6dcbe2b81eb97774d8e07b27ec5de368, type: 3}
+        m_Texture: {fileID: 2800000, guid: 89a760432429afc47bc39abfc6ffc831, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -83,7 +83,7 @@ Material:
     - _BumpScale: 1
     - _ConstantSize: 1
     - _Cutoff: 0.58
-    - _Density: 8
+    - _Density: 15
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
@@ -108,7 +108,7 @@ Material:
     - _UseMainTexAlpha: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9622642, g: 0.67155784, b: 0.19517623, a: 1}
+    - _Color: {r: 0, g: 0.29404286, b: 0.8301887, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}

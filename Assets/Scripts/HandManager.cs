@@ -36,8 +36,9 @@ public class HandManager : MonoBehaviour{
     public OVRHand hand;
     public Transform spellSpwanPoint;
     public GameManager gameManager;
+    public List<GameObject> tags;
     [Header("Debug")]
-    public GameObject spellPrefab;
+    public GameObject spellPrefabDebug;
 
     GameObject currentSpell = null; //observable patterns??
     Vector3 previousPosition;
@@ -52,7 +53,8 @@ public class HandManager : MonoBehaviour{
     void Update(){
         if(gameManager.gamePhase == GamePhase.STARTED){
             if(openHand() && currentSpell == null){
-                currentSpell = Instantiate(spellPrefab, spellSpwanPoint);
+                // currentSpell = Instantiate(spellPrefab, spellSpwanPoint);
+                setTagsActive(true);
             }
         }
 
@@ -87,6 +89,17 @@ public class HandManager : MonoBehaviour{
                 rb.AddForce(currentVelocity * 500);
 
             }
+        }
+    }
+
+    void setTagsActive(bool value){
+        tags.ForEach( x => x.SetActive(value));
+    }
+
+    public void setActiveSpell(GameObject spellPrefab){
+        if(currentSpell == null){
+            setTagsActive(false);
+            currentSpell = Instantiate(spellPrefab, spellSpwanPoint);
         }
     }
 

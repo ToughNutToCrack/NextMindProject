@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1925,6 +1925,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   calibrationManager: {fileID: 1105899054}
   resultsText: {fileID: 1573854499}
+  onCalibrationEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105899057}
+        m_MethodName: activateAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoStart: 1
   objectToUse:
   - {fileID: 109305334}
   - {fileID: 1004051762}

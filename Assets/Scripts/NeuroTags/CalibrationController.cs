@@ -1,17 +1,29 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using NextMind;
 using NextMind.Devices;
 using NextMind.Calibration;
 using System.Collections.Generic;
 
-public class TestTagManager : MonoBehaviour{
+public class CalibrationController : MonoBehaviour{
     public CalibrationManager calibrationManager;
     public Text resultsText;
+    public List<GameObject> calibrationTags;
+    public UnityEvent onCalibrationEnd;
+    [Header("Debug")]
+    public bool autoStart = false;
     public List<GameObject> objectToUse;
-    
+
     void Start(){
+        if(autoStart){
+            startCalibration();
+        }
+    }
+    
+    public void startCalibration(){
+        calibrationTags.ForEach( x => x.SetActive(true));
         StartCoroutine(startCalibrationWhenReady());
     }
 
@@ -30,11 +42,13 @@ public class TestTagManager : MonoBehaviour{
 
     IEnumerator closeTextAndStartTest(){
         yield return new WaitForSeconds(3);
-        resultsText.gameObject.SetActive(false);
-        activateAll();
+        if(onCalibrationEnd != null){
+            onCalibrationEnd.Invoke();
+        }
     }
 
-    void activateAll(){
+    public void activateAll(){
+        resultsText.gameObject.SetActive(false);
         objectToUse.ForEach( x => x.SetActive(true));
     }
 }

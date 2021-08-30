@@ -22,15 +22,20 @@ public class GameManager : MonoBehaviour{
     public GameObject neuroManager;
     public GameObject nextMindStatus;
     public GameObject calibrationCanvas;
+    public CalibrationController calibrationController;
+    public GameObject calibrationTags;
 
     [HideInInspector]
     public GamePhase gamePhase = GamePhase.NONE;
+    [HideInInspector]
     public TrainingPhase trainingPhase = TrainingPhase.NONE;
 
     void Start() {
         neuroManager.SetActive(useNextMind); 
         nextMindStatus.SetActive(useNextMind); 
         calibrationCanvas.SetActive(useNextMind); 
+        calibrationController.gameObject.SetActive(useNextMind); 
+        calibrationTags.SetActive(useNextMind); 
     }
 
     public void startGame(){
@@ -38,8 +43,14 @@ public class GameManager : MonoBehaviour{
             gamePhase = GamePhase.STARTED;
         }else{
             gamePhase = GamePhase.TRAINING;
-            //startTraining;
+            calibrationController.startCalibration();
         }
+    }
+
+    public void onCalibrationEnd(){
+        gamePhase = GamePhase.STARTED;
+        trainingPhase = TrainingPhase.COMPLETE;
+        // calibrationCanvas.SetActive(false);
     }
 
 }
