@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour{
 
     public void startGame(){
         if(!useNextMind){
-            gamePhase = GamePhase.STARTED;
+            onGameStarted();
         }else{
             gamePhase = GamePhase.TRAINING;
             calibrationController.startCalibration();
@@ -48,9 +48,13 @@ public class GameManager : MonoBehaviour{
     }
 
     public void onCalibrationEnd(){
-        gamePhase = GamePhase.STARTED;
         trainingPhase = TrainingPhase.COMPLETE;
         calibrationCanvas.SetActive(false);
+        onGameStarted();
+    }
+
+    void onGameStarted(){
+        gamePhase = GamePhase.STARTED;
     }
 
 }
