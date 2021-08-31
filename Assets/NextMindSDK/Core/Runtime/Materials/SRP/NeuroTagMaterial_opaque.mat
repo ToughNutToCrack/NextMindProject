@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6966582928934785701
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!114 &-4801111597464109935
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -21,7 +34,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NeuroTagMaterial_opaque
-  m_Shader: {fileID: -6465566751694194690, guid: 5e1d40b955b5c2d43a57cab9663ddffc, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 5e1d40b955b5c2d43a57cab9663ddffc,
+    type: 3}
   m_ShaderKeywords: CONSTANT_SIZE PROJECTION_TYPE_TRIPLANAR RENDERING_MODE_OPAQUE
     _ALPHATEST_ON _DISABLE_DECALS _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 0
@@ -102,6 +116,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - PROJECTION_TYPE: 2
     - PixelSnap: 0

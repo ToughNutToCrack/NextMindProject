@@ -55,14 +55,11 @@ public class HandManager : MonoBehaviour{
             currentSpell.transform.SetParent(null);
             Rigidbody rb = currentSpell.AddComponent<Rigidbody>();
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-            if (Vector3.Dot(head.forward, currentVelocity) < 0){
-                print("back");
-            }else{
-                // rb.AddForce(currentVelocity * 500);
-                rb.velocity += currentVelocity  * 10;
-                // print(currentVelocity);
-                currentSpell = null;
-            }
+            // rb.AddForce(currentVelocity * 500);
+            rb.velocity += currentVelocity  * 10;
+            // print(currentVelocity);
+            currentSpell = null;
+            
         }
     }
 

@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NeuroTagMaterial_unlit
-  m_Shader: {fileID: -6465566751694194690, guid: 49fd64a31fbefea4a8d589e82ad62149, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 49fd64a31fbefea4a8d589e82ad62149,
+    type: 3}
   m_ShaderKeywords: CONSTANT_SIZE MAIN_ALPHA PROJECTION_TYPE_TRIPLANAR RENDERING_MODE_TRANSPARENT
     _ALPHATEST_ON _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 0
@@ -88,6 +89,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - PROJECTION_TYPE: 2
     - PixelSnap: 0
@@ -199,3 +201,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 11
+--- !u!114 &7596196827837491957
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
