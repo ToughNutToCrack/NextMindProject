@@ -31,7 +31,9 @@ public class HandManager : MonoBehaviour{
                 }else{
                     currentSpell = Instantiate(spellPrefabDebug, spellSpwanPoint.position, spellSpwanPoint.rotation);
                     currentSpell.transform.SetParent(spellSpwanPoint);
-                    currentSpell.transform.localPosition += offset;
+                    if(currentSpell.GetComponent<Spell>().useOffset){
+                        currentSpell.transform.localPosition += offset;
+                    }
                 }
             }
         }
@@ -78,7 +80,9 @@ public class HandManager : MonoBehaviour{
             setTagsActive(false);
             currentSpell = Instantiate(spellPrefab, spellSpwanPoint.position, spellSpwanPoint.rotation);
             currentSpell.transform.SetParent(spellSpwanPoint);
-            currentSpell.transform.localPosition += offset;
+            if(currentSpell.GetComponent<Spell>().useOffset){
+                currentSpell.transform.localPosition += offset;
+            }
         }
     }
 

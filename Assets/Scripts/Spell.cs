@@ -10,6 +10,7 @@ public class Spell : MonoBehaviour{
     public SpellType spellType;
 
     public VisualEffect vfx;
+    public bool useOffset;
 
     void Start(){
         if(vfx == null){

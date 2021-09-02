@@ -2047,7 +2047,7 @@ MonoBehaviour:
   gameManager: {fileID: 1525425504}
   tags:
   - {fileID: 1351075499}
-  spellPrefabDebug: {fileID: 298119104898808169, guid: 4e6b8c727ef92f14a9195a34ae713be7,
+  spellPrefabDebug: {fileID: 531049345257151272, guid: 7a12171d93d798244bea42d553011563,
     type: 3}
 --- !u!54 &654211505
 Rigidbody:
