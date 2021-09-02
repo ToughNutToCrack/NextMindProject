@@ -6,6 +6,8 @@ public class HandManager : MonoBehaviour{
     public OVRHand hand;
     public Transform spellSpwanPoint;
     public Vector3 offset;
+    public float strength = 8;
+    [Space]
     public GameManager gameManager;
     public List<GameObject> tags;
     [Header("Debug")]
@@ -60,7 +62,7 @@ public class HandManager : MonoBehaviour{
             Rigidbody rb = currentSpell.AddComponent<Rigidbody>();
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             // rb.AddForce(currentVelocity * 500);
-            rb.velocity += currentVelocity  * 10;
+            rb.velocity += currentVelocity  * strength;
             // print(currentVelocity);
             currentSpell = null;
             
