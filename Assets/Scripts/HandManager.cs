@@ -5,6 +5,7 @@ public class HandManager : MonoBehaviour{
     public Transform head;
     public OVRHand hand;
     public Transform spellSpwanPoint;
+    public Vector3 offset;
     public GameManager gameManager;
     public List<GameObject> tags;
     [Header("Debug")]
@@ -26,7 +27,9 @@ public class HandManager : MonoBehaviour{
                 if(gameManager.trainingPhase == TrainingPhase.COMPLETE){
                     setTagsActive(true);
                 }else{
-                    currentSpell = Instantiate(spellPrefabDebug, spellSpwanPoint);
+                    currentSpell = Instantiate(spellPrefabDebug, spellSpwanPoint.position, spellSpwanPoint.rotation);
+                    currentSpell.transform.SetParent(spellSpwanPoint);
+                    currentSpell.transform.localPosition += offset;
                 }
             }
         }
@@ -52,6 +55,7 @@ public class HandManager : MonoBehaviour{
 
     void OnTriggerEnter(Collider other) {
         if(other.tag == "SpellBoxController" && currentSpell != null){
+            currentSpell.GetComponent<Spell>().onThrowing();
             currentSpell.transform.SetParent(null);
             Rigidbody rb = currentSpell.AddComponent<Rigidbody>();
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
@@ -70,7 +74,9 @@ public class HandManager : MonoBehaviour{
     public void setActiveSpell(GameObject spellPrefab){
         if(currentSpell == null){
             setTagsActive(false);
-            currentSpell = Instantiate(spellPrefab, spellSpwanPoint);
+            currentSpell = Instantiate(spellPrefab, spellSpwanPoint.position, spellSpwanPoint.rotation);
+            currentSpell.transform.SetParent(spellSpwanPoint);
+            currentSpell.transform.localPosition += offset;
         }
     }
 
