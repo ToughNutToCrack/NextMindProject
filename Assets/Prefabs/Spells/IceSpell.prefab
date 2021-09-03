@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3335013059609540978}
   m_Layer: 9
   m_Name: IceSpell
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b98b2e80631bc7409ece240f6eeb04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactPrefab: {fileID: 7847585303955441121, guid: 5975eddec8df93f42969fc6614c8683e,
+  impactPrefab: {fileID: 7847585303955441124, guid: 5975eddec8df93f42969fc6614c8683e,
     type: 3}
   spellType: 1
   vfx: {fileID: 1735103930858781979}

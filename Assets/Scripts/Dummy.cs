@@ -6,14 +6,15 @@ public class Dummy : MonoBehaviour
 {
     public Transform target;
     public Animator animator;
+    public Transform decalsAnchor;
 
     void Update() {
         if(Input.GetKeyDown(KeyCode.Space))
             animator.SetTrigger("hit");
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Spell")) {
+    void OnCollisionEnter(Collision other) {
+        if (other.collider.CompareTag("Spell")) {
             animator.SetTrigger("hit");
         }
     }

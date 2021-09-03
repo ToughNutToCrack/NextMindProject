@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 public enum SpellType {FIRE, ICE, THUNDER}
 
 public class Spell : MonoBehaviour{
-    public GameObject impactPrefab;
+    public Impact impactPrefab;
     public SpellType spellType;
 
     public VisualEffect vfx;
@@ -21,6 +21,12 @@ public class Spell : MonoBehaviour{
     void OnCollisionEnter(Collision other) {
         var impactVFX = Instantiate(impactPrefab, other.contacts[0].point - other.contacts[0].normal * .05f, Quaternion.identity);
         impactVFX.transform.rotation = Quaternion.FromToRotation(transform.forward, other.contacts[0].normal) * transform.rotation;
+        Dummy dummy = other.collider.GetComponent<Dummy>();
+        if (dummy != null) {
+            impactVFX.anchorTo(dummy.decalsAnchor);
+            impactVFX.transform.SetParent(dummy.decalsAnchor);
+            // Debug.Break();
+        }
         Destroy(gameObject);
     }
 

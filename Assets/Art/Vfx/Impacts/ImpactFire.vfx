@@ -6624,7 +6624,7 @@ MonoBehaviour:
   particlePerStripCount: 16
   needsComputeBounds: 0
   boundsSettingMode: 1
-  m_Space: 1
+  m_Space: 0
 --- !u!114 &8926484042661615658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9692,7 +9692,7 @@ MonoBehaviour:
   particlePerStripCount: 16
   needsComputeBounds: 0
   boundsSettingMode: 1
-  m_Space: 1
+  m_Space: 0
 --- !u!114 &8926484042661615759
 MonoBehaviour:
   m_ObjectHideFlags: 0

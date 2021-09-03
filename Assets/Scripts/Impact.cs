@@ -9,9 +9,11 @@ public class Impact : MonoBehaviour{
     public float speed = 1;
     public float timeBeforeDecal = 0;
     public float timeBeforeFade = 2;
+    public GameObject vfx;
 
     Material currentMaterial;
     float elapsedTime = 0;
+    bool anchored;
 
     void Start() {
         Destroy(gameObject, timeBeforeDecal + timeBeforeFade * 2);
@@ -33,5 +35,17 @@ public class Impact : MonoBehaviour{
                 currentMaterial.SetFloat(FADE, fadeValue);
             }
         }
+    }
+    
+    void OnDestroy() {
+        if(anchored){
+            Destroy(vfx);
+        }
+    }
+
+    public void anchorTo(Transform anchor){
+        transform.SetParent(anchor);
+        vfx.transform.SetParent(null);
+        anchored = true;
     }
 }

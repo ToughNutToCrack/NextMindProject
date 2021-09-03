@@ -165,8 +165,8 @@ MonoBehaviour:
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.05}
-  m_Size: {x: 2, y: 2, z: 0.1}
+  m_Offset: {x: 0, y: 0, z: 0.35}
+  m_Size: {x: 2, y: 2, z: 0.7}
   m_FadeFactor: 1
 --- !u!114 &7847585303955441124
 MonoBehaviour:
@@ -182,8 +182,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decal: {fileID: 7847585303955441126}
   speed: 1
-  timeBeforeDecal: 0.5
+  timeBeforeDecal: 0.3
   timeBeforeFade: 3
+  vfx: {fileID: 357682573796809129}
 --- !u!114 &895817824649008281
 MonoBehaviour:
   m_ObjectHideFlags: 0

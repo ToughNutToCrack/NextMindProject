@@ -182,7 +182,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decal: {fileID: 7847585303955441126}
   speed: 1
+  timeBeforeDecal: 0
   timeBeforeFade: 3
+  vfx: {fileID: 357682573796809129}
 --- !u!114 &641023336
 MonoBehaviour:
   m_ObjectHideFlags: 0
