@@ -41,7 +41,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357682573796809129}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: ca770d59e8c93f943aa58ab5977cf2e1, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 08a6d869ce3acb84c9f06ab2040fdac2, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 0.05}
-  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Size: {x: 2, y: 2, z: 0.1}
   m_FadeFactor: 1
 --- !u!114 &7847585303955441124
 MonoBehaviour:
@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decal: {fileID: 7847585303955441126}
   speed: 1
+  timeBeforeDecal: 0.5
   timeBeforeFade: 3
 --- !u!114 &895817824649008281
 MonoBehaviour:

@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357682573796809129}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.07}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,7 +41,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357682573796809129}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: ca770d59e8c93f943aa58ab5977cf2e1, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 1582fd1deae938b47933e09d143c4f30, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -55,7 +55,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 4.3813105, y: 3.6242619, z: 2.58332, w: 1}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -121,6 +124,7 @@ GameObject:
   - component: {fileID: 7847585303955441127}
   - component: {fileID: 7847585303955441126}
   - component: {fileID: 7847585303955441124}
+  - component: {fileID: 5927045828052462916}
   m_Layer: 0
   m_Name: ImpactThunder
   m_TagString: Untagged
@@ -164,8 +168,8 @@ MonoBehaviour:
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.05}
-  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Offset: {x: 0, y: 0, z: 0.4}
+  m_Size: {x: 2, y: 2, z: 0.8}
   m_FadeFactor: 1
 --- !u!114 &7847585303955441124
 MonoBehaviour:
@@ -182,3 +186,15 @@ MonoBehaviour:
   decal: {fileID: 7847585303955441126}
   speed: 1
   timeBeforeFade: 3
+--- !u!114 &5927045828052462916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847585303955441121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedfc9bf4516a184ba5622a9be02060f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
