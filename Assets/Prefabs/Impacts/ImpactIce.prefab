@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 7847585303955441127}
   - component: {fileID: 7847585303955441126}
   - component: {fileID: 7847585303955441124}
+  - component: {fileID: 641023336}
   m_Layer: 0
   m_Name: ImpactIce
   m_TagString: Untagged
@@ -164,8 +165,8 @@ MonoBehaviour:
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.05}
-  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Offset: {x: 0, y: 0, z: 0.39}
+  m_Size: {x: 1, y: 1, z: 0.78}
   m_FadeFactor: 1
 --- !u!114 &7847585303955441124
 MonoBehaviour:
@@ -182,3 +183,15 @@ MonoBehaviour:
   decal: {fileID: 7847585303955441126}
   speed: 1
   timeBeforeFade: 3
+--- !u!114 &641023336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847585303955441121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedfc9bf4516a184ba5622a9be02060f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

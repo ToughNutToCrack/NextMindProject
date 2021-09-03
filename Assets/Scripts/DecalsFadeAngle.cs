@@ -8,12 +8,15 @@ using UnityEngine.Rendering.Universal;
 public class DecalsFadeAngle : MonoBehaviour{
     const string FW = "_Forward";
     DecalProjector decal;
+    Material currentMaterial;
 
-    void Start(){
-        decal = GetComponent<DecalProjector>();
-        Material m = decal.material;
-        if(m != null){
-            m.SetVector(FW, transform.forward);
+    void Update(){
+        if(decal == null){
+            decal = GetComponent<DecalProjector>();
+        }
+        currentMaterial = decal.material;
+        if(currentMaterial != null){
+            currentMaterial.SetVector(FW, transform.forward);
         }
     }
 

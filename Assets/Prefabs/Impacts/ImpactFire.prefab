@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 7847585303955441127}
   - component: {fileID: 7847585303955441126}
   - component: {fileID: 7847585303955441124}
+  - component: {fileID: 895817824649008281}
   m_Layer: 0
   m_Name: ImpactFire
   m_TagString: Untagged
@@ -182,3 +183,15 @@ MonoBehaviour:
   decal: {fileID: 7847585303955441126}
   speed: 1
   timeBeforeFade: 3
+--- !u!114 &895817824649008281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847585303955441121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedfc9bf4516a184ba5622a9be02060f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
