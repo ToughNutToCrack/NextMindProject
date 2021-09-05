@@ -2133,7 +2133,7 @@ MonoBehaviour:
   gameManager: {fileID: 1525425504}
   tags:
   - {fileID: 1351075499}
-  spellPrefabDebug: {fileID: 3297592426515384689, guid: fdb13924190a74d46b49d3abdcb41d7a,
+  spellPrefabDebug: {fileID: 531049345257151272, guid: 7a12171d93d798244bea42d553011563,
     type: 3}
 --- !u!54 &654211505
 Rigidbody:
@@ -14171,6 +14171,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1735103930858781979, guid: 7a12171d93d798244bea42d553011563,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735103930858781979, guid: 7a12171d93d798244bea42d553011563,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Name
+      value: TrailsSize
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735103930858781979, guid: 7a12171d93d798244bea42d553011563,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735103930858781979, guid: 7a12171d93d798244bea42d553011563,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2575096796271096264, guid: 7a12171d93d798244bea42d553011563,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.152
+      objectReference: {fileID: 0}
     - target: {fileID: 3335013059609540978, guid: 7a12171d93d798244bea42d553011563,
         type: 3}
       propertyPath: impactPrefab
@@ -14199,7 +14224,7 @@ PrefabInstance:
     - target: {fileID: 4929196503175326683, guid: 7a12171d93d798244bea42d553011563,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4929196503175326683, guid: 7a12171d93d798244bea42d553011563,
         type: 3}

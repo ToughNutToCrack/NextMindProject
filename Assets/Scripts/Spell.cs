@@ -34,7 +34,7 @@ public class Spell : MonoBehaviour{
         if(vfx != null){
             var trailsSize = spellType switch {
                 SpellType.THUNDER => .5f,
-                SpellType.ICE => .7f,
+                SpellType.ICE => .5f,
                 SpellType.FIRE => .5f,
                 _ => 0,
             };
