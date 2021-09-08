@@ -16,7 +16,7 @@ public class DecalsFadeAngle : MonoBehaviour{
         }
         currentMaterial = decal.material;
         if(currentMaterial != null){
-            currentMaterial.SetVector(FW, transform.forward);
+            currentMaterial.SetVector(FW, -transform.forward);
         }
     }
 

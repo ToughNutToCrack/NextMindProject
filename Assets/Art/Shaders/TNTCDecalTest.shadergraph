@@ -254,20 +254,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "5e1824f3290d4327b33ab1a5b32ad0e8"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "642209d259594c8394a97b96b8931942"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "63b7b3fb2d3a4b1393074218b294ce16"
                 },
                 "m_SlotId": 3
@@ -3389,7 +3375,7 @@
         "affectsEmission": true,
         "drawOrder": 0,
         "supportLodCrossFade": true,
-        "angleFade": false
+        "angleFade": true
     }
 }
 

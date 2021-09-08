@@ -53,6 +53,6 @@ Material:
     - _Smoothness: 0
     m_Colors:
     - _Color: {r: 0, g: 0.45882353, b: 1, a: 0}
-    - _Forward: {r: 0.99718857, g: -0.04570836, b: 0.059379995, a: 0}
+    - _Forward: {r: -0, g: -1.0000001, b: 0.00000011920929, a: 0}
     - _SecondaryColor: {r: 0.94537187, g: 1.4266521, b: 3.2830186, a: 0}
   m_BuildTextureStacks: []
