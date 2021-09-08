@@ -1,0 +1,94 @@
+NEXT MIND
+
+Hi guys, it's been a while since our last video in collaboration with André.
+During the past months, we were very busy with other projects and experiences.
+Among others things, we have been contacted by Next Mind.
+They've asked us to test their Brain-Computer Interface, and we have decided to build a project over it.
+Today, we are going to see how to become a real wizard, on Unity.
+
+SIGLA
+
+Next Mind, is a french startup, that's working on a brain-computer interface.
+They have sent us their dev kit, to review and test it from our point of view, as developers.
+This device is supposed to allow you to control your PC using your mind.
+* you are a wizard harry *
+After a calibration phase, it is able to recognize some particular tags, when you focus on them.
+Their app comes with some demos and also with the Unity SDK.
+
+We've started familiarizing ourselves with the device, playing the demos, and reading the documentation.
+After that, we have focused on the design of the experience.
+Our feeling using it was that everything was pretty magical, so we have decided to create a sort of magic academy.
+The player should have used the Next Mind sensor, to choose which spell cast.
+But, to be a real wizard, a player can't use a mouse or a keyboard, so why don't do everything in VR with the Oculus hand tracking?
+
+We had already experienced the hand tracking by Oculus, 
+so I won't bother you with the setup and I'm gonna leave you the video where we go deeper on that topic.
+
+The Next Mind SDK comes with some examples and all the tools necessary to create your own experiences.
+The system uses particular elements called Neuro Tag. 
+They are components able to make an object interactable using your mind.
+
+When a tag is recognized, it can trigger an event.
+In our case, we gonna use this event to spawn the selected spell.
+
+By default, their appearance is Sci-Fi-ish, so we've customized them a bit, making them more fantasy-like.
+We've kept tags as clean as possible, avoiding problems with the recognition.
+Once a spell is selected, we calculate its velocity according to the hand movement.
+
+Since no buttons or controllers were involved, we've needed something else to throw the spell.
+We've placed a collider in front of the player,  and when the hand touches it, the spell is released.
+
+Searching for some inspiration about the environment, we've found this handsome asset on Sketchfab.
+We've imported it in Blender, and we've created a large hall for our wizard training starting from that.
+
+For the shading, an old friend has come to the rescue!
+We've used the Zelda toon shader we've created for our first video.
+
+But, a self-respecting training camp needs some dummies.
+Back in Blender, we have created the model and its rig.
+Using the Animation Rigging package, we've settled up an effector that makes our dummy moves accordingly.
+So, we've recorded an animation that shakes it with a bit of dumping.
+
+With the environment completed, it was the spell's turn.
+We've created one VFX graph per spell, making them different and detailed.
+
+But those spells didn't reflect the style of the environment.
+So, we've redesigned all the VFX to achieve a more cartoon-ish style that could match the wizard school and the dummies.
+
+We've drawn some textures, made some shaders, and put everything together using the VFX graph.
+
+When a spell hits something, it is supposed to do a sort of damage. To highlight the hit against the environment or the dummies, we've worked on decals. 
+Initially, we've used the Output Particle Forward Decal provided by the VFX graph, but they had some troubles with the VR setup.
+So we had to find a solution.
+We've read about the Decals that would become available for URP in the last Unity Beta, and we've decided to give them a chance.
+
+Using the decals, we've found a problem with the edges.
+When a face is parallel to the projection direction, the texture looks stretched.
+
+// * To solve this, we've written a simple shader that calculated the dot product between the forward vector of the Decal and the world normal vector 
+// then uses that value as alpha.
+// The normal vector is reconstructed using the derivatives in X and Y and the cross product between them.
+// * The forward vector, instead, is set by a script execute in Edit Mode.
+
+// *backward vector
+// We've could achieve a similar result enabling the Angle Fade properties in the shader.
+// But, in this case, we've wanted a sharper projection.
+
+We've could solve this, creating a shader and enabling the Angle Fade property.
+But, we've wanted to keep a sharper projection.
+
+So in the shader, we've calculated the dot product between the backward vector of the Decal and the world normal vector 
+then uses that value to modulate the alpha.
+
+The normal vector is reconstructed using the derivatives in X and Y and the cross product between them.
+
+The backward vector, instead, is set by a script execute in Edit Mode
+
+Eventually, we've added a new VFX to each impact using the same textures we've created for the spells, making every hits more dramatic.
+
+Wrapping everything up, this is the final result.
+
+Let us know in a comment below what you think about this project.
+Don't forget to subscribe, smash the like button and follow us on the other socials!
+See you next time.
+Cheers.
