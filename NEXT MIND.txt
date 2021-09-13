@@ -38,6 +38,9 @@ Once a spell is selected, we calculate its velocity according to the hand moveme
 Since no buttons or controllers were involved, we've needed something else to throw the spell.
 We've placed a collider in front of the player,  and when the hand touches it, the spell is released.
 
+The direction was calculated using the head and the hand positions. 
+The strength, instead, was modulated by the magnitude of the velocity.
+
 Searching for some inspiration about the environment, we've found this handsome asset on Sketchfab.
 We've imported it in Blender, and we've created a large hall for our wizard training starting from that.
 
@@ -57,6 +60,11 @@ So, we've redesigned all the VFX to achieve a more cartoon-ish style that could 
 
 We've drawn some textures, made some shaders, and put everything together using the VFX graph.
 
+Each spell is composed of several elements.
+For instance, some particles use alpha blending to compose the color.
+Others use the additive to enhance the glows.
+Also, for some particular elements like the orbs, we've used the Shader graph that is compatible with the VFX graph enabling the experimental nodes.
+
 When a spell hits something, it is supposed to do a sort of damage. To highlight the hit against the environment or the dummies, we've worked on decals. 
 Initially, we've used the Output Particle Forward Decal provided by the VFX graph, but they had some troubles with the VR setup.
 So we had to find a solution.
@@ -65,24 +73,12 @@ We've read about the Decals that would become available for URP in the last Unit
 Using the decals, we've found a problem with the edges.
 When a face is parallel to the projection direction, the texture looks stretched.
 
-// * To solve this, we've written a simple shader that calculated the dot product between the forward vector of the Decal and the world normal vector 
-// then uses that value as alpha.
-// The normal vector is reconstructed using the derivatives in X and Y and the cross product between them.
-// * The forward vector, instead, is set by a script execute in Edit Mode.
 
-// *backward vector
-// We've could achieve a similar result enabling the Angle Fade properties in the shader.
-// But, in this case, we've wanted a sharper projection.
+To solve this, we've enabled the Angle Fade property in the shader.
+This property allows you to set up the fade of the decal based on its angle.
 
-We've could solve this, creating a shader and enabling the Angle Fade property.
-But, we've wanted to keep a sharper projection.
+In addition, we've added a fade property to vanish the decal over time. 
 
-So in the shader, we've calculated the dot product between the backward vector of the Decal and the world normal vector 
-then uses that value to modulate the alpha.
-
-The normal vector is reconstructed using the derivatives in X and Y and the cross product between them.
-
-The backward vector, instead, is set by a script execute in Edit Mode
 
 Eventually, we've added a new VFX to each impact using the same textures we've created for the spells, making every hits more dramatic.
 

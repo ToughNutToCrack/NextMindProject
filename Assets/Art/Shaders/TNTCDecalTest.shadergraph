@@ -3375,7 +3375,7 @@
         "affectsEmission": true,
         "drawOrder": 0,
         "supportLodCrossFade": true,
-        "angleFade": true
+        "angleFade": false
     }
 }
 

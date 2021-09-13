@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Thrower : MonoBehaviour{
     public GameObject spell;
+    public List<GameObject> spells;
+    public bool randomize;
     public float strength = 8;
 
     
@@ -14,7 +16,11 @@ public class Thrower : MonoBehaviour{
     }
 
     void throwSpell(){
-        var currentSpell = Instantiate(spell, transform.position, transform.rotation);
+        var selectedSpell = spell;
+        if(randomize){
+            selectedSpell = spells[Random.Range(0,3)];
+        }
+        var currentSpell = Instantiate(selectedSpell, transform.position, transform.rotation);
         currentSpell.GetComponent<Spell>().onThrowing();
         currentSpell.transform.SetParent(null);
         Rigidbody rb = currentSpell.AddComponent<Rigidbody>();

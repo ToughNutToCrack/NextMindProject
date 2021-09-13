@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357682573796809129}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: -0.1}
+  m_LocalPosition: {x: 0, y: -0, z: 0.3}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -160,13 +160,13 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 8df2cc4cc2aa3614f8d13fdfd2483618, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
-  m_StartAngleFade: 180
-  m_EndAngleFade: 180
+  m_StartAngleFade: 0
+  m_EndAngleFade: 29.720154
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.35}
-  m_Size: {x: 2, y: 2, z: 0.7}
+  m_Offset: {x: 0, y: 0, z: 0.5}
+  m_Size: {x: 2, y: 2, z: 1}
   m_FadeFactor: 1
 --- !u!114 &7847585303955441124
 MonoBehaviour:

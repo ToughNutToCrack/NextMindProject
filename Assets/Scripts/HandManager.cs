@@ -13,9 +13,10 @@ public class HandManager : MonoBehaviour{
     [Header("Debug")]
     public GameObject spellPrefabDebug;
 
-    GameObject currentSpell = null; //observable patterns??
+    GameObject currentSpell = null;
     Vector3 previousPosition;
     Vector3 currentVelocity;
+    Vector3 currentDirection;
 
     void Start() {
         previousPosition = transform.position;    
@@ -40,8 +41,7 @@ public class HandManager : MonoBehaviour{
 
         if(currentSpell != null){
             currentVelocity = calculateCurrentVelocity();
-            // print(currentVelocity);
-            // printDistanceFromHead();
+            currentDirection = calculateDirection();
         }
     }
 
@@ -57,15 +57,19 @@ public class HandManager : MonoBehaviour{
         print(distance);
     }
 
+    Vector3 calculateDirection(){
+        var heading = currentSpell.transform.position - head.position;
+        var distance = heading.magnitude;
+        return heading/distance;
+    }
+
     void OnTriggerEnter(Collider other) {
         if(other.tag == "SpellBoxController" && currentSpell != null){
             currentSpell.GetComponent<Spell>().onThrowing();
             currentSpell.transform.SetParent(null);
             Rigidbody rb = currentSpell.AddComponent<Rigidbody>();
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-            // rb.AddForce(currentVelocity * 500);
-            rb.velocity += currentVelocity  * strength;
-            // print(currentVelocity);
+            rb.velocity += currentDirection * currentVelocity.magnitude * strength;
             currentSpell = null;
             
         }

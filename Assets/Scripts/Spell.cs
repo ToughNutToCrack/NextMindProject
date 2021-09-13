@@ -19,13 +19,19 @@ public class Spell : MonoBehaviour{
     }
     
     void OnCollisionEnter(Collision other) {
-        var impactVFX = Instantiate(impactPrefab, other.contacts[0].point + other.contacts[0].normal * .05f, Quaternion.identity);
-        impactVFX.transform.rotation = Quaternion.FromToRotation(-transform.forward, other.contacts[0].normal) * transform.rotation;
-        Dummy dummy = other.collider.GetComponent<Dummy>();
-        if (dummy != null) {
-            impactVFX.anchorTo(dummy.decalsAnchor);
-            impactVFX.transform.SetParent(dummy.decalsAnchor);
-            // Debug.Break();
+        if(impactPrefab != null){
+            Dummy dummy = other.collider.GetComponent<Dummy>();
+            var dist = .5f;
+            if(dummy != null){
+                dist = 1;
+            }
+            var impactVFX = Instantiate(impactPrefab, other.contacts[0].point + other.contacts[0].normal * dist, Quaternion.identity);
+            impactVFX.transform.rotation = Quaternion.FromToRotation(-transform.forward, other.contacts[0].normal) * transform.rotation;
+            
+            if (dummy != null) {
+                impactVFX.anchorTo(dummy.decalsAnchor);
+                impactVFX.transform.SetParent(dummy.decalsAnchor);
+            }
         }
         Destroy(gameObject);
     }
@@ -34,7 +40,7 @@ public class Spell : MonoBehaviour{
         if(vfx != null){
             var trailsSize = spellType switch {
                 SpellType.THUNDER => .5f,
-                SpellType.ICE => .5f,
+                SpellType.ICE => .1f,
                 SpellType.FIRE => .5f,
                 _ => 0,
             };
